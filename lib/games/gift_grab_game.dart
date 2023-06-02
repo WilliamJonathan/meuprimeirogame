@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flame/collisions.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
 import 'package:flame_audio/flame_audio.dart';
@@ -32,7 +33,10 @@ class GiftGrabGame extends FlameGame with DragCallbacks, HasCollisionDetection {
     ]);
 
     //componente cubo de gelo
-    add(IceComponent(startPosition: Vector2(100, 200)));
-    add(IceComponent(startPosition: Vector2(size.x - 100, size.y - 100)));
+    add(IceComponent(startPosition: Vector2(200, 200)));
+    add(IceComponent(startPosition: Vector2(size.x - 200, size.y - 200)));
+
+    //Adiciona limites para bloco de gelo.
+    add(ScreenHitbox());
   }
 }
